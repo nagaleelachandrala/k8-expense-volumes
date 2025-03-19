@@ -66,25 +66,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: expense
+  namespace: expense1
   # labels of deployment resource
   labels:
     app: frontend
     tier: web
-    project: expense
+    project: expense1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: frontend
       tier: web
-      project: expense
+      project: expense1
   template:
     metadata:
       labels:
         app: frontend
         tier: web
-        project: expense
+        project: expense1
     spec:
       volumes:
       - name: nginx
@@ -95,7 +95,7 @@ spec:
               path: nginx.conf
       containers:
       - name: nginx
-        image: joindevops/frontend:1.2.0
+        image: nagaleelachandrala/frontend:1.2.0
         resources:
           # soft limit
           requests:
